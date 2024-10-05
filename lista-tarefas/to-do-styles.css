@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+#task-form {
+    display: flex;
+    justify-content: space-between;
+}
+#task-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #28a745;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: #218838;
+}
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.task-item.completed {
+    text-decoration: line-through;
+    color: #888;
+}
+.task-item.urgent {
+    background: #ffdddd;
+}
+.task-item.important {
+    background: #fff3cd;
+}
+.task-item.on-hold {
+    background: #d1ecf1;
+}
+.task-item.cancelled {
+    background: #f8d7da;
+}
+.task-actions button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.task-actions .complete {
+    background: #28a745;
+    color: #fff;
+}
+.task-actions .cancel {
+    background: #dc3545;
+    color: #fff;
+}
+.task-actions .hold {
+    background: #ffc107;
+    color: #fff;
+}
+.task-actions .urgent {
+    background: #ff5733;
+    color: #fff;
+}
+.task-actions .important {
+    background: #ffc107;
+    color: #fff;
+}
+.task-actions .delete {
+    background: #6c757d;
+    color: #fff;
+}
