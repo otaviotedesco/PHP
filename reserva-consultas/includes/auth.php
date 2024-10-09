@@ -2,17 +2,12 @@
 session_start();
 include_once 'db.php'; 
 
-function login($pdo, $username, $password) {
-   
-    $username = filter_var($username, FILTER_SANITIZE_STRING);
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
-    $stmt->execute([$username]);
+function login($username, $password, $pdo) {
+    $stmt = $pdo->prepare('SELECT * FROM users WHERE username = :username');
+    $stmt->execute(['username' => $username]);
     $user = $stmt->fetch();
 
     if ($user && password_verify($password, $user['password'])) {
-        session_regenerate_id(true);
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['role'] = $user['role'];
         return true;
     }
     return false;

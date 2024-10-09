@@ -19,6 +19,17 @@
         include_once 'C:\xampp\htdocs\reserva-consultas\includes\auth.php';
         include_once 'C:\xampp\htdocs\reserva-consultas\includes\db.php';
 
+        // Initialize the PDO object
+        $dsn = 'pgsql:host=localhost;dbname=sistema_reserva';
+        $db_user = 'postgres';
+        $db_password = 'j23.049';
+        try {
+            $pdo = new PDO($dsn, $db_user, $db_password);
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die('Database connection failed: ' . $e->getMessage());
+        }
+
         $username = $_POST['username'];
         $password = $_POST['password'];
 
